@@ -35,7 +35,7 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 
 ### Regla de nombrado
 
-**Regla Genérica**
+**Regla Genérica:**
 `<<prefijoItem>>_<<nombreItem>>.<<ext>>`
 
 **Reglas Específicas**
