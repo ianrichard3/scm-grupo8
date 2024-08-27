@@ -5,6 +5,7 @@ El documento de gestión de configuración se encuentra en el directorio raíz d
 # Estructura de directorios
 Hemos propuesto la siguiente distribución de directorios pensando en el desarrollo de la materia y en la forma que tenemos nosotros para prepararnos para un parcial.
 
+'''
 ├──Bibliografia
 ├──MaterialDeClase
 │   ├── UnidadX
@@ -14,7 +15,7 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 ├──TrabajosConceptuales
 ├──Resúmenes
     ├── ParcialX
-
+'''
 
 # Listado de ítems de configuración
 
