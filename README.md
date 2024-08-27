@@ -40,5 +40,5 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 ## Criterio de Línea Base
 
 ## Enlace al repositorio
-Para el control de versiones se utilizará el sistema de control de versiones distribuido [Git] https://git-scm.com/.
-El repositorio se encuentra alojado en [GitHub] https://github.com/ianrichard3/scm-grupo8.git. 
+Para el control de versiones se utilizará el sistema de control de versiones distribuido [Git](https://git-scm.com/).
+El repositorio se encuentra alojado en [GitHub](https://github.com/ianrichard3/scm-grupo8.git)
