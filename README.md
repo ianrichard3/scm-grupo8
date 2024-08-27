@@ -31,21 +31,7 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 | Resúmen            | RES     | DOCX, PDF          | /Resúmenes/ParcialX                |
 | Guía               | GUIA    | PDF                | /TrabajosPrácticos                 |
 
-# Glosario
 
-|Sigla | Descripción|
-|---|---|
-|TP| Trabajo Práctico|
-|U | Unidad|
-|IngSW | Ingeniería de Software|
-|ISW | Ingeniería y Calidad de Software|
-|G8 | Grupo 8|
-|G| Gestión|
-|GSW| Gestión del Software como Producto|
-|SCM| Gestión de Configuración del Software|
-|RA| Requerimientos Ágiles|
-|PP| Proceso y Producto|
-|US| User Stories|
 
 ### Regla de nombrado
 
@@ -64,6 +50,15 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 
 
 ## Glosario
+
+|Sigla | Descripción|
+|---|---|
+|TP| Trabajo Práctico|
+|ISW | Ingeniería y Calidad de Software|
+|SCM| Gestión de Configuración del Software|
+|RA| Requerimientos Ágiles|
+|PP| Proceso y Producto|
+|US| User Stories|
 
 ## Criterio de Línea Base
 
