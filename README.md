@@ -32,11 +32,15 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 | Guía               | GUIA    | PDF                | /TrabajosPrácticos                 |
 
 
-### Regla de nombrado
-Genérica: <<prefijoItem>>_<<nombreItem>>.<<ext>>
-Específicas:
-Resumen: el prefijo incluye el autor del resumen, ejemplo: RES_Nico_ResumenPrimerParcial.pdf. 
-Toma de notas: el prefijo incluye el autor de la toma de notas, ejemplo: NOTAS_Nico_NotasClaseSCM.pdf. 
+### Genérica
+Formato: `<<prefijoItem>>_<<nombreItem>>.<<ext>>`
+
+### Específicas
+- **Resumen:** El prefijo incluye el autor del resumen.
+  - Ejemplo: `RES_Nico_ResumenPrimerParcial.pdf`
+- **Toma de Notas:** El prefijo incluye el autor de la toma de notas.
+  - Ejemplo: `NOTAS_Nico_NotasClaseSCM.pdf`
+
 
 
 
