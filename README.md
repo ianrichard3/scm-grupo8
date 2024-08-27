@@ -32,8 +32,18 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 | Guía               | GUIA    | PDF                | /TrabajosPrácticos                 |
 
 
+### Genérica
+Formato: `<<prefijoItem>>_<<nombreItem>>.<<ext>>`
 
-### Regla de nombrado
+### Específicas
+- **Resumen:** El prefijo incluye el autor del resumen.
+  - Ejemplo: `RES_Nico_ResumenPrimerParcial.pdf`
+- **Toma de Notas:** El prefijo incluye el autor de la toma de notas.
+  - Ejemplo: `NOTAS_Nico_NotasClaseSCM.pdf`
+
+
+
+
 
 ## Glosario
 
