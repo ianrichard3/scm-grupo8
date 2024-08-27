@@ -19,6 +19,20 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 
 ## Listado de ítems de configuración
 
+| Tipo               | Prefijo | Extensión          | Ubicación                          |
+|--------------------|---------|--------------------|------------------------------------|
+| Bibliografía       | BIBLIO  | PDF                | /Bibliografía                      |
+| Presentación       | PRES    | PDF, PPTX          | /MaterialDeClase/UnidadX           |
+| Toma de Notas      | NOTAS   | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
+| Ejercicio práctico | EJER    | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
+| Lineamiento        | LIN     | PDF                | /Lineamientos                      |
+| Trabajo Práctico   | TP      | DOCX, PDF          | /TrabajosPrácticos/TPX             |
+| Trabajo Conceptual | TC      | DOCX, PDF          | /TrabajosConceptuales              |
+| Resúmen            | RES     | DOCX, PDF          | /Resúmenes/ParcialX                |
+| Guía               | GUIA    | PDF                | /TrabajosPrácticos                 |
+
+
+
 ### Regla de nombrado
 
 ## Glosario
