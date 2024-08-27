@@ -3,6 +3,18 @@ El presente documento tiene como objetivo establecer los lineamientos a seguir p
 El documento de gestión de configuración se encuentra en el directorio raíz del repositorio y por una disposición del repositorio remoto que estamos utilizando debe de llamarse "README.md". De esta manera se puede tener siempre visible el documento de gestión de configuración de una forma rápida y sencilla.
 
 # Estructura de directorios
+Hemos propuesto la siguiente distribución de directorios pensando en el desarrollo de la materia y en la forma que tenemos nosotros para prepararnos para un parcial.
+
+/Bibliografía
+/MaterialDeClase
+	/UnidadX
+/Lineamientos
+/TrabajosPrácticos
+	TPX
+/TrabajosConceptuales
+/Resúmenes
+	/ParcialX
+
 
 # Listado de ítems de configuración
 
