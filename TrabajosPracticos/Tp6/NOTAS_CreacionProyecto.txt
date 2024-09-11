@@ -8,7 +8,6 @@ Para instalar las dependencias del proyecto: npm install
 Para ejecutar el proyecto en modo desarrollo: npm run dev
 
 
-
 GUIA Nueva Branch:
 
 Creamos la branch local usando el comando: git checkout -b <nombre-branch>
