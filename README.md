@@ -28,7 +28,7 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 | Lineamiento        | LIN     | PDF                | /Lineamientos                      |
 | Trabajo Práctico   | TP      | DOCX, PDF          | /TrabajosPrácticos/TPX             |
 | Trabajo Conceptual | TC      | DOCX, PDF          | /TrabajosConceptuales              |
-| Resúmen            | RES     | DOCX, PDF          | /Resúmenes/ParcialX                |
+| Resumen            | RES     | DOCX, PDF          | /Resúmenes/ParcialX                |
 | Guía               | GUIA    | PDF                | /TrabajosPrácticos                 |
 
 
