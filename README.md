@@ -54,7 +54,7 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 |Sigla | Descripción|
 |---|---|
 |TP| Trabajo Práctico|
-|ISW | Ingeniería y Calidad de Software|
+|ICS | Ingeniería y Calidad de Software|
 |SCM| Gestión de Configuración del Software|
 |RA| Requerimientos Ágiles|
 |PP| Proceso y Producto|
