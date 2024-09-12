@@ -128,7 +128,7 @@ const Formulario = ({ onSubmit }) => {
             name="fechaRetiro"
             value={formData.fechaRetiro}
             onChange={handleChange}
-            min={new Date().toISOString().split("T")[0]} // Fecha mínima de hoy
+            min={new Date().toISOString().split("T")[0]}
           />
         </label>
       </div>

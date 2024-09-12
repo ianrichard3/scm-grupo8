@@ -30,8 +30,9 @@ label {
   font-weight: bold;
   color: #444;
 }
-.dateLabel {
-  margin-right: 1.6rem;
+
+.dateLabel input {
+  margin-left: 1.6rem;
 }
 
 input,
