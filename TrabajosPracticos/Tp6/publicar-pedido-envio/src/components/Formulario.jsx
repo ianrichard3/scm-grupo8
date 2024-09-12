@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Formulario = ({ onSubmit }) => {
-  const [formData, setFormData] = useState({
+  const initialState = {
     tipoCarga: "",
     domicilioRetiro: {
       calle: "",
@@ -18,7 +18,9 @@ const Formulario = ({ onSubmit }) => {
     },
     fechaEntrega: "",
     fotos: [],
-  });
+  };
+
+  const [formData, setFormData] = useState(initialState);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,6 +54,7 @@ const Formulario = ({ onSubmit }) => {
       return;
     }
     onSubmit(formData);
+    setFormData(initialState);
   };
 
   return (
