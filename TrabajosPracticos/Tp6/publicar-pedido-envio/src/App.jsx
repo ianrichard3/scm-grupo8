@@ -5,7 +5,7 @@ function App() {
   // onFormSubmit = () => {};
 
   const onSubmit = (formData) => {
-    console.log(formData);
+    // console.log(formData);
     // Aquí podrías enviar la información al servidor
   };
 
