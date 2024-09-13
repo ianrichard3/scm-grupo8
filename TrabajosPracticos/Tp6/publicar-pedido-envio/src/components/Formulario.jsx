@@ -2,6 +2,7 @@ import { useState } from "react";
 import DomicilioForm from "./DomicilioForm";
 import TipoCargaForm from "./TipoCargaForm";
 import AdjuntarFotosForm from "./AdjuntarFotosForm";
+import HeaderForm from "./HeaderForm";
 
 const Formulario = ({ onSubmit }) => {
   const initialState = {
@@ -50,7 +51,9 @@ const Formulario = ({ onSubmit }) => {
   };
 
   return (
-    <form className="formContainer" onSubmit={handleSubmit}>
+    <form className="formContentContainer" onSubmit={handleSubmit}>
+      <HeaderForm title="Formulario" />
+
       <TipoCargaForm
         name="tipoCarga"
         value={formData.tipoCarga}
