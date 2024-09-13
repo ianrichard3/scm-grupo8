@@ -1,18 +1,16 @@
 #root {
-  max-width: 1280px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+h1, h2 {
   color: #333;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 form {
@@ -20,63 +18,44 @@ form {
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 0 auto;
+  margin-bottom: 1.5rem;
 }
 
 label {
   display: block;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.5rem;
   font-weight: bold;
-  color: #444;
+  color: #555;
 }
 
-.dateLabel input {
-  margin-left: 1.6rem;
-}
-
-input,
-select {
+input, select {
   width: 100%;
   padding: 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
-  box-sizing: border-box;
 }
 
-input[type="date"] {
-  max-width: 200px;
-}
-
-input[type="file"] {
-  padding: 0.5rem;
-  background-color: #f1f1f1;
-}
-
-button[type="submit"] {
+button {
   background-color: #61dafb;
   color: white;
   border: none;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 4px;
-  transition: background-color 300ms;
+  transition: background-color 300ms ease;
+  margin-right: 10px;
 }
 
-button[type="submit"]:hover {
+button:hover {
   background-color: #21a1f1;
 }
 
-.card {
-  padding: 2em;
-  margin-top: 2rem;
-}
-
-.read-the-docs {
-  color: #888;
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 @media (max-width: 768px) {
@@ -84,16 +63,11 @@ button[type="submit"]:hover {
     padding: 1rem;
   }
 
-  form {
-    padding: 1.5rem;
-  }
-
-  input,
-  select {
+  input, select {
     padding: 0.5rem;
   }
 
-  button[type="submit"] {
-    padding: 0.75rem 1.5rem;
+  button {
+    padding: 0.5rem 1rem;
   }
 }

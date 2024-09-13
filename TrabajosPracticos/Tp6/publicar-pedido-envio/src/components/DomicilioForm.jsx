@@ -1,19 +1,13 @@
-const DomicilioForm = ({
-  title,
-  formData,
-  handleNestedChange,
-  nextStep,
-  prevStep,
-}) => {
+const DomicilioForm = ({ title, formData, handleNestedChange, nextStep, prevStep }) => {
   return (
     <div>
       <h2>{title}</h2>
       <label>
-        Calle y Número:
+        Provincia:
         <input
           type="text"
-          value={formData.calle}
-          onChange={(e) => handleNestedChange(e, "calle")}
+          value={formData.provincia}
+          onChange={(e) => handleNestedChange(e, "provincia")}
         />
       </label>
       <label>
@@ -25,11 +19,11 @@ const DomicilioForm = ({
         />
       </label>
       <label>
-        Provincia:
+        Calle y Número:
         <input
           type="text"
-          value={formData.provincia}
-          onChange={(e) => handleNestedChange(e, "provincia")}
+          value={formData.calle}
+          onChange={(e) => handleNestedChange(e, "calle")}
         />
       </label>
       <label>
@@ -39,6 +33,14 @@ const DomicilioForm = ({
           value={formData.referencia}
           onChange={(e) => handleNestedChange(e, "referencia")}
           placeholder="Opcional"
+        />
+      </label>
+      <label>
+        Fecha de {title.includes("Retiro") ? "Retiro" : "Entrega"}:
+        <input
+          type="date"
+          value={formData.fecha}
+          onChange={(e) => handleNestedChange(e, "fecha")}
         />
       </label>
       <button onClick={prevStep}>Anterior</button>
