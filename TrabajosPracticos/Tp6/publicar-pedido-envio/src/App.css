@@ -23,7 +23,7 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: antiquewhite;
+    background-color: rgb(168, 168, 236);
     box-sizing: border-box;
 }
 
@@ -43,7 +43,6 @@ html, body {
 
 
 .tipoCargaContainer label {
-    border-bottom: 1px solid black;
     margin-bottom: 10px;
 }
 
@@ -85,10 +84,133 @@ html, body {
 
 
 .formStepsContainer {
+  gap: 30px;
+  flex: 1;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch;
+  justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+
+.domicilioContainer {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.fieldLabel {
+  display: flex;
+  gap: 10px;
+  font-size: 16px; /* Tamaño de fuente */
+  font-weight: 500; /* Peso de la fuente */
+  color: #333; /* Color de texto */
+  text-align: center;
+  align-items: center; /* Alineación vertical de los elementos */
+  flex-direction: row;
+  padding: 5px;
+  width: 100%;
+  justify-content: space-between;
+  flex: 1;
+  margin-bottom: 5px;
+}
+
+.dateLabel {
+  text-align: center;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  flex: auto;
+  justify-content: space-between;
+  font-size: 14px; /* Tamaño de fuente un poco más pequeño para fechas */
+  color: #007bff; /* Color específico para el label de fecha */
+  font-weight: bold; /* Negrita para destacar la fecha */
+  padding: 5px; /* Añade algo de relleno */
+  border-radius: 5px; /* Esquinas redondeadas */
+  width: 100%;
+}
+
+
+.fieldLabel input {
+  width: 100%; /* El input ocupa todo el ancho disponible */
+  padding: 10px; /* Espacio interno para que el texto no esté pegado a los bordes */
+  font-size: 16px; /* Tamaño de la fuente similar a los labels */
+  border: 1px solid #ddd; /* Borde ligero y neutral */
+  border-radius: 5px; /* Esquinas redondeadas */
+  outline: none; /* Remueve el borde azul por defecto al hacer foco */
+  transition: border-color 0.3s ease; /* Transición suave en el borde */
+}
+
+.fieldLabel input:focus {
+  border-color: #007bff; /* Cambia el color del borde al hacer foco */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra azul sutil al enfocar */
+}
+
+.fieldLabel input[type="date"] {
+  font-size: 14px; /* Tamaño de fuente ligeramente menor para inputs de fecha */
+}
+
+.fieldLabel input[type="submit"] {
+  background-color: #007bff; /* Color de fondo para botones */
+  color: white; /* Color de texto para botones */
+  cursor: pointer; /* Cambia el cursor a un puntero */
+  border: none; /* Remueve el borde para botones */
+  transition: background-color 0.3s ease; /* Transición suave del fondo */
+}
+
+.fieldLabel input[type="submit"]:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+
+.fieldLabel input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  flex: auto;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo suave */
+  color: #333; /* Color de texto */
+  appearance: none; /* Quita los estilos por defecto del navegador */
+  outline: none; /* Elimina el borde de enfoque por defecto */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+.fieldLabel input[type="date"]::placeholder {
+  color: #aaa; /* Color del placeholder */
+}
+
+.fieldLabel input[type="date"]:focus {
+  border-color: #007bff; /* Cambia el color del borde al enfocar */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra sutil azul al enfocar */
+  background-color: #fff; /* Fondo blanco al hacer foco */
+}
+
+.fieldLabel input[type="date"]:hover {
+  border-color: #007bff; /* Cambia el color del borde al pasar el mouse */
+}
+
+/* Estilos adicionales para mejorar la apariencia del ícono del calendario */
+.fieldLabel input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: #007bff; /* Color del ícono del calendario */
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer; /* Cambia el cursor cuando se pasa sobre el ícono */
+}
+
+
+
+
+
+.adjuntarFotosContainer {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
