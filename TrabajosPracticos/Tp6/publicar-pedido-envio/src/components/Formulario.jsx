@@ -60,36 +60,38 @@ const Formulario = ({ onSubmit }) => {
         handleChange={handleChange}
       />
 
-      <DomicilioForm
-        name={"Retiro"}
-        value={{
-          calle: formData.calleRetiro,
-          localidad: formData.localidadRetiro,
-          provincia: formData.provinciaRetiro,
-          referencia: formData.referenciaRetiro,
-          fecha: formData.fechaRetiro,
-        }}
-        handleChange={handleChange}
-        tipoFormulario="Retiro"
-      />
+      <div className="formStepsContainer">
+        <DomicilioForm
+          name={"Retiro"}
+          value={{
+            calle: formData.calleRetiro,
+            localidad: formData.localidadRetiro,
+            provincia: formData.provinciaRetiro,
+            referencia: formData.referenciaRetiro,
+            fecha: formData.fechaRetiro,
+          }}
+          handleChange={handleChange}
+          tipoFormulario="Retiro"
+        />
 
-      <DomicilioForm
-        value={{
-          calle: formData.calleEntrega,
-          localidad: formData.localidadEntrega,
-          provincia: formData.provinciaEntrega,
-          referencia: formData.referenciaEntrega,
-          fecha: formData.fechaEntrega,
-        }}
-        handleChange={handleChange}
-        tipoFormulario="Entrega"
-        name={"Entrega"}
-      />
+        <DomicilioForm
+          value={{
+            calle: formData.calleEntrega,
+            localidad: formData.localidadEntrega,
+            provincia: formData.provinciaEntrega,
+            referencia: formData.referenciaEntrega,
+            fecha: formData.fechaEntrega,
+          }}
+          handleChange={handleChange}
+          tipoFormulario="Entrega"
+          name={"Entrega"}
+        />
 
-      <AdjuntarFotosForm
-        handleFileChange={handleFileChange}
-        formData={formData}
-      />
+        <AdjuntarFotosForm
+          handleFileChange={handleFileChange}
+          formData={formData}
+        />
+      </div>
 
       <button type="submit">Enviar</button>
     </form>
