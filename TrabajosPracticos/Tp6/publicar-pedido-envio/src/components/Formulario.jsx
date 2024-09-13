@@ -2,6 +2,7 @@ import { useState } from "react";
 import DomicilioForm from "./DomicilioForm";
 import TipoCargaForm from "./TipoCargaForm";
 import AdjuntarFotosForm from "./AdjuntarFotosForm";
+import HeaderForm from "./HeaderForm";
 
 const Formulario = ({ onSubmit }) => {
   const initialState = {
@@ -50,43 +51,47 @@ const Formulario = ({ onSubmit }) => {
   };
 
   return (
-    <form className="formContainer" onSubmit={handleSubmit}>
+    <form className="formContentContainer" onSubmit={handleSubmit}>
+      <HeaderForm title="Formulario" />
+
       <TipoCargaForm
         name="tipoCarga"
         value={formData.tipoCarga}
         handleChange={handleChange}
       />
 
-      <DomicilioForm
-        name={"Retiro"}
-        value={{
-          calle: formData.calleRetiro,
-          localidad: formData.localidadRetiro,
-          provincia: formData.provinciaRetiro,
-          referencia: formData.referenciaRetiro,
-          fecha: formData.fechaRetiro,
-        }}
-        handleChange={handleChange}
-        tipoFormulario="Retiro"
-      />
+      <div className="formStepsContainer">
+        <DomicilioForm
+          name={"Retiro"}
+          value={{
+            calle: formData.calleRetiro,
+            localidad: formData.localidadRetiro,
+            provincia: formData.provinciaRetiro,
+            referencia: formData.referenciaRetiro,
+            fecha: formData.fechaRetiro,
+          }}
+          handleChange={handleChange}
+          tipoFormulario="Retiro"
+        />
 
-      <DomicilioForm
-        value={{
-          calle: formData.calleEntrega,
-          localidad: formData.localidadEntrega,
-          provincia: formData.provinciaEntrega,
-          referencia: formData.referenciaEntrega,
-          fecha: formData.fechaEntrega,
-        }}
-        handleChange={handleChange}
-        tipoFormulario="Entrega"
-        name={"Entrega"}
-      />
+        <DomicilioForm
+          value={{
+            calle: formData.calleEntrega,
+            localidad: formData.localidadEntrega,
+            provincia: formData.provinciaEntrega,
+            referencia: formData.referenciaEntrega,
+            fecha: formData.fechaEntrega,
+          }}
+          handleChange={handleChange}
+          tipoFormulario="Entrega"
+          name={"Entrega"}
+        />
 
-      <AdjuntarFotosForm
-        handleFileChange={handleFileChange}
-        formData={formData}
-      />
+        <AdjuntarFotosForm
+          handleFileChange={handleFileChange}
+          formData={formData}
+        />
+      </div>
 
       <button type="submit">Enviar</button>
     </form>

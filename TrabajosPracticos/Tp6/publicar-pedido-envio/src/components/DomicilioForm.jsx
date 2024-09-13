@@ -3,9 +3,10 @@ import { useState } from "react";
 const DomicilioForm = ({ value, name, tipoFormulario, handleChange }) => {
   return (
     <>
-      <div className="domicilioContainer" style={{ marginBottom: "10px" }}>
+      <div className="domicilioContainer">
         <h3>Domicilio de {tipoFormulario}</h3>
-        <label>
+
+        <label className="fieldLabel">
           Provincia
           <input
             type="text"
@@ -14,7 +15,8 @@ const DomicilioForm = ({ value, name, tipoFormulario, handleChange }) => {
             name={`provincia${name}`}
           />
         </label>
-        <label>
+
+        <label className="fieldLabel">
           Localidad
           <input
             type="text"
@@ -23,7 +25,8 @@ const DomicilioForm = ({ value, name, tipoFormulario, handleChange }) => {
             name={`localidad${name}`}
           />
         </label>
-        <label>
+
+        <label className="fieldLabel">
           Calle y Número
           <input
             type="text"
@@ -32,7 +35,8 @@ const DomicilioForm = ({ value, name, tipoFormulario, handleChange }) => {
             name={`calle${name}`}
           />
         </label>
-        <label>
+
+        <label className="fieldLabel">
           Referencia
           <input
             type="text"
@@ -42,19 +46,19 @@ const DomicilioForm = ({ value, name, tipoFormulario, handleChange }) => {
             placeholder="Opcional"
           />
         </label>
-      </div>
 
-      <div style={{ marginBottom: "10px" }}>
-        <label className="dateLabel">
-          Fecha de {tipoFormulario}
-          <input
-            type="date"
-            value={value.fecha}
-            name={`fecha${name}`}
-            onChange={handleChange}
-            min={new Date().toISOString().split("T")[0]}
-          />
-        </label>
+        <div>
+          <label className="dateLabel fieldLabel">
+            Fecha de {tipoFormulario}
+            <input
+              type="date"
+              value={value.fecha}
+              name={`fecha${name}`}
+              onChange={handleChange}
+              min={new Date().toISOString().split("T")[0]}
+            />
+          </label>
+        </div>
       </div>
     </>
   );

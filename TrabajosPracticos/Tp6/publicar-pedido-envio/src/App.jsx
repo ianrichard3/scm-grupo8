@@ -11,7 +11,6 @@ function App() {
 
   return (
     <>
-      <h1>Formulario</h1>
       <Formulario onSubmit={onSubmit} />
     </>
   );
