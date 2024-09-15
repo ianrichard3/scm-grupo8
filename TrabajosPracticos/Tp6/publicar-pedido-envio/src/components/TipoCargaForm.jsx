@@ -4,7 +4,7 @@ const TipoCargaForm = ({ value, name, handleChange }) => {
   return (
     <>
       <div className="tipoCargaContainer">
-        <label>Tipo de carga</label>
+        <h3 className="subtitle">Tipo de carga</h3>
         <select name={name} value={value} onChange={handleChange}>
           <option value="">Seleccione...</option>
           <option value="documentacion">Documentación</option>

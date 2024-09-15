@@ -4,7 +4,6 @@ const DomicilioForm = ({ value, name, tipoFormulario, handleChange }) => {
   return (
     <>
       <div className="domicilioContainer">
-        <h3>Domicilio de {tipoFormulario}</h3>
 
         <div className="fieldContainer">
           <label className="fieldLabel">

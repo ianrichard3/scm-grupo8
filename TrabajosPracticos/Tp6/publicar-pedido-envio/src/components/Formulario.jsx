@@ -5,8 +5,12 @@ import AdjuntarFotosForm from "./AdjuntarFotosForm";
 import HeaderForm from "./HeaderForm";
 
 
+const stepTitles = ["Formulario", "Domicilio de Retiro", "Domicilio de Entrega", "Agregar Imagenes"]
 
 const Formulario = ({ onSubmit }) => {
+
+
+
   const initialState = {
     tipoCarga: "",
 
@@ -31,7 +35,6 @@ const Formulario = ({ onSubmit }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
     setFormData({ ...formData, [name]: value });
   };
 
@@ -52,9 +55,12 @@ const Formulario = ({ onSubmit }) => {
     }
     onSubmit(formData);
     setFormData(initialState);
+
+    console.log(formData)
   };
 
   const [step, setStep] = useState(1)
+  const [title, setTitle] = useState("Formulario")
 
   const handleNextStep = () => {
     setStep(step + 1)
@@ -64,11 +70,16 @@ const Formulario = ({ onSubmit }) => {
     setStep(step - 1)
   }
 
+  useEffect(() => {
+    setTitle(stepTitles[step - 1])
+
+  }, [step])
+
 
 
   return (
     <form className="formContentContainer" onSubmit={handleSubmit}>
-      <HeaderForm title="Formulario" />
+      <HeaderForm title={title} />
 
       {step === 1 &&
         <TipoCargaForm
@@ -123,11 +134,11 @@ const Formulario = ({ onSubmit }) => {
 
       </div>
       <div className="navButtonsContainer">
-        <button onClick={handlePrevStep}>Previous</button>
-        <button onClick={handleNextStep}>Next</button>
+        {step > 1 && <button className="mainBtn" onClick={handlePrevStep}>Volver</button>}
+        {step < 4 && <button className="mainBtn" type="submit" onClick={handleNextStep}>Siguiente</button>}
       </div>
 
-      <button type="submit">Enviar</button>
+      {step === 4 && <button type="submit">Terminar</button>}
     </form>
   );
 };

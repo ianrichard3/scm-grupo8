@@ -12,11 +12,29 @@ body {
 }
 
 
+.mainBtn {
+  background-color: #4ea5bd;
+  color: black;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 300ms ease;
+}
+
+
+.subtitle {
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
 
 .formContentContainer {
   flex: 1;
   width: 400px;
-  height: 850px;
   padding-bottom: 30px;
   padding-inline: 30px;
   border-radius: 15px;
@@ -34,6 +52,7 @@ body {
   border-bottom: 1px solid black;
   margin-bottom: 20px;
   padding-bottom: 20px;
+  font-size: 34px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -60,16 +79,17 @@ body {
   border-radius: 8px;
   padding: 10px 15px;
   font-size: 16px;
+  text-align: center;
   font-weight: 500;
   color: #333;
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* background-image: url('https://www.svgrepo.com/show/2046/down-arrow.svg'); */
   background-repeat: no-repeat;
   background-position: right 15px center;
   background-size: 15px;
+  margin-bottom: 20px;
 }
 
 .tipoCargaContainer select:focus {
@@ -97,11 +117,10 @@ body {
   gap: 30px;
   flex: 1;
   display: flex;
-  flex-direction: row;
+  width: 100%;
+  flex-direction: column;
   align-items: stretch;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  justify-content: space-between;
 }
 
 
@@ -117,10 +136,9 @@ body {
   flex: 1;
   width: 100%;
   display: flex;
-  gap: 10px;
   justify-content: space-around;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   padding: 5px;
 }
 
@@ -143,12 +161,12 @@ body {
   font-weight: bold;
   padding: 5px;
   border-radius: 5px;
-  width: 50%;
+  width: 100%;
 }
 
 
 .fieldContainer input {
-  width: 50%;
+  width: 100%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ddd;
@@ -157,14 +175,10 @@ body {
   transition: border-color 0.3s ease;
 }
 
-
 .fieldContainer input:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
-
-
-
 
 .fieldContainer select {
   appearance: none;
@@ -189,9 +203,7 @@ body {
 
 .fieldContainer select:focus {
   border-color: #007bff;
-  /* Color de borde cuando está en foco */
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-  /* Sombra al hacer focus */
 }
 
 .fieldContainer select:hover {
@@ -207,20 +219,6 @@ body {
   padding: 10px;
 }
 
-
-
-
-.fieldContainer input[type="submit"] {
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-.fieldContainer input[type="submit"]:hover {
-  background-color: #0056b3;
-}
 
 
 .fieldContainer input[type="date"] {
@@ -276,8 +274,4 @@ body {
   flex-direction: row;
   gap: 10px;
   margin: 10px
-}
-
-.navButtonsContainer button {
-  width: 30%;
 }
