@@ -1,10 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DomicilioForm from "./DomicilioForm";
 import TipoCargaForm from "./TipoCargaForm";
 import AdjuntarFotosForm from "./AdjuntarFotosForm";
 import HeaderForm from "./HeaderForm";
 
+
+const useDomicilioIsEmpty = (formData, retiro) => {
+  if (retiro) {
+    return [formData.calleRetiro, formData.localidadRetiro,
+    formData.provinciaRetiro, formData.numeroRetiro,
+    formData.fechaRetiro].includes("")
+  }
+  return [formData.calleEntrega, formData.localidadEntrega,
+  formData.provinciaEntrega, formData.numeroEntrega,
+  formData.fechaEntrega].includes("")
+}
+
+
+
 const Formulario = ({ onSubmit }) => {
+
+
+
   const initialState = {
     tipoCarga: "",
 
@@ -52,49 +69,79 @@ const Formulario = ({ onSubmit }) => {
     setFormData(initialState);
   };
 
+  const [step, setStep] = useState(1)
+
+  useEffect(() => {
+    if (formData.tipoCarga !== "") {
+      setStep(2)
+      if (!useDomicilioIsEmpty(formData, true)) {
+        setStep(3)
+        console.log("step3")
+        if (!useDomicilioIsEmpty(formData, false)) {
+          setStep(4)
+        } else setStep(3)
+
+      } else setStep(2)
+    }
+    else { setStep(1) }
+
+  }, [formData])
+
   return (
     <form className="formContentContainer" onSubmit={handleSubmit}>
       <HeaderForm title="Formulario" />
 
-      <TipoCargaForm
-        name="tipoCarga"
-        value={formData.tipoCarga}
-        handleChange={handleChange}
-      />
+      {step > 0 &&
+        <TipoCargaForm
+          name="tipoCarga"
+          value={formData.tipoCarga}
+          handleChange={handleChange}
+        />}
+
+
 
       <div className="formStepsContainer">
-        <DomicilioForm
-          name={"Retiro"}
-          value={{
-            calle: formData.calleRetiro,
-            numero: formData.numeroRetiro,
-            localidad: formData.localidadRetiro,
-            provincia: formData.provinciaRetiro,
-            referencia: formData.referenciaRetiro,
-            fecha: formData.fechaRetiro,
-          }}
-          handleChange={handleChange}
-          tipoFormulario="Retiro"
-        />
+        {step > 1 &&
+          <DomicilioForm
+            name={"Retiro"}
+            value={{
+              calle: formData.calleRetiro,
+              numero: formData.numeroRetiro,
+              localidad: formData.localidadRetiro,
+              provincia: formData.provinciaRetiro,
+              referencia: formData.referenciaRetiro,
+              fecha: formData.fechaRetiro,
+            }}
+            handleChange={handleChange}
+            tipoFormulario="Retiro"
+          />
+        }
 
-        <DomicilioForm
-          value={{
-            calle: formData.calleEntrega,
-            numero: formData.numeroEntrega,
-            localidad: formData.localidadEntrega,
-            provincia: formData.provinciaEntrega,
-            referencia: formData.referenciaEntrega,
-            fecha: formData.fechaEntrega,
-          }}
-          handleChange={handleChange}
-          tipoFormulario="Entrega"
-          name={"Entrega"}
-        />
+        {step > 2 &&
 
-        <AdjuntarFotosForm
-          handleFileChange={handleFileChange}
-          formData={formData}
-        />
+          <DomicilioForm
+            value={{
+              calle: formData.calleEntrega,
+              numero: formData.numeroEntrega,
+              localidad: formData.localidadEntrega,
+              provincia: formData.provinciaEntrega,
+              referencia: formData.referenciaEntrega,
+              fecha: formData.fechaEntrega,
+            }}
+            handleChange={handleChange}
+            tipoFormulario="Entrega"
+            name={"Entrega"}
+          />
+        }
+
+        {step > 3 &&
+          <AdjuntarFotosForm
+            handleFileChange={handleFileChange}
+            formData={formData}
+          />
+
+        }
+
       </div>
 
       <button type="submit">Enviar</button>

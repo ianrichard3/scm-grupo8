@@ -10,12 +10,6 @@ const DomicilioForm = ({ value, name, tipoFormulario, handleChange }) => {
           <label className="fieldLabel">
             Provincia
           </label>
-          {/* <input
-            type="text"
-            value={value.provincia}
-            onChange={handleChange}
-            name={`provincia${name}`}
-          /> */}
           <select
             value={value.provincia}
             onChange={handleChange}
