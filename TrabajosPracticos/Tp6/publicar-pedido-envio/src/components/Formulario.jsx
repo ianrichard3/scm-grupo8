@@ -5,23 +5,8 @@ import AdjuntarFotosForm from "./AdjuntarFotosForm";
 import HeaderForm from "./HeaderForm";
 
 
-const useDomicilioIsEmpty = (formData, retiro) => {
-  if (retiro) {
-    return [formData.calleRetiro, formData.localidadRetiro,
-    formData.provinciaRetiro, formData.numeroRetiro,
-    formData.fechaRetiro].includes("")
-  }
-  return [formData.calleEntrega, formData.localidadEntrega,
-  formData.provinciaEntrega, formData.numeroEntrega,
-  formData.fechaEntrega].includes("")
-}
-
-
 
 const Formulario = ({ onSubmit }) => {
-
-
-
   const initialState = {
     tipoCarga: "",
 
@@ -71,27 +56,21 @@ const Formulario = ({ onSubmit }) => {
 
   const [step, setStep] = useState(1)
 
-  useEffect(() => {
-    if (formData.tipoCarga !== "") {
-      setStep(2)
-      if (!useDomicilioIsEmpty(formData, true)) {
-        setStep(3)
-        console.log("step3")
-        if (!useDomicilioIsEmpty(formData, false)) {
-          setStep(4)
-        } else setStep(3)
+  const handleNextStep = () => {
+    setStep(step + 1)
+  }
 
-      } else setStep(2)
-    }
-    else { setStep(1) }
+  const handlePrevStep = () => {
+    setStep(step - 1)
+  }
 
-  }, [formData])
+
 
   return (
     <form className="formContentContainer" onSubmit={handleSubmit}>
       <HeaderForm title="Formulario" />
 
-      {step > 0 &&
+      {step === 1 &&
         <TipoCargaForm
           name="tipoCarga"
           value={formData.tipoCarga}
@@ -101,7 +80,7 @@ const Formulario = ({ onSubmit }) => {
 
 
       <div className="formStepsContainer">
-        {step > 1 &&
+        {step === 2 &&
           <DomicilioForm
             name={"Retiro"}
             value={{
@@ -117,7 +96,7 @@ const Formulario = ({ onSubmit }) => {
           />
         }
 
-        {step > 2 &&
+        {step === 3 &&
 
           <DomicilioForm
             value={{
@@ -134,7 +113,7 @@ const Formulario = ({ onSubmit }) => {
           />
         }
 
-        {step > 3 &&
+        {step === 4 &&
           <AdjuntarFotosForm
             handleFileChange={handleFileChange}
             formData={formData}
@@ -142,6 +121,10 @@ const Formulario = ({ onSubmit }) => {
 
         }
 
+      </div>
+      <div className="navButtonsContainer">
+        <button onClick={handlePrevStep}>Previous</button>
+        <button onClick={handleNextStep}>Next</button>
       </div>
 
       <button type="submit">Enviar</button>
