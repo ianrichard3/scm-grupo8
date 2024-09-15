@@ -1,86 +1,92 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0; 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
 }
 
 
 
 .formContentContainer {
-    flex: 1;
-    width: 960px;
-    padding-bottom: 30px;
-    padding-inline: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgb(168, 168, 236);
-    box-sizing: border-box;
+  flex: 1;
+  width: 960px;
+  padding-bottom: 30px;
+  padding-inline: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(168, 168, 236);
+  box-sizing: border-box;
 }
 
 .formHeader {
-    width: 100%;
-    flex: 1;
-    border-bottom: 1px solid black;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+  width: 100%;
+  flex: 1;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .tipoCargaContainer {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 
 .tipoCargaContainer label {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-.tipoCargaContainer select{
-    appearance: none; /* Elimina el estilo nativo */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: #f0f0f0; 
-    border: 2px solid #ccc; 
-    border-radius: 8px; 
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
-    outline: none;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Transición suave */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    /* background-image: url('https://www.svgrepo.com/show/2046/down-arrow.svg'); */
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 15px;
-  }
-  
-  .tipoCargaContainer select:focus {
-    border-color: #007bff; /* Color de borde cuando está en foco */
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Sombra al hacer focus */
-  }
-  
-  .tipoCargaContainer select:hover {
-    background-color: #e6e6e6; /* Color de fondo cuando se hace hover */
-  }
-  
-  .tipoCargaContainer select option {
-    background-color: #fff; /* Color de fondo del dropdown */
-    color: #333; /* Color de texto del dropdown */
-    padding: 10px;
-  }
+.tipoCargaContainer select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* background-image: url('https://www.svgrepo.com/show/2046/down-arrow.svg'); */
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 15px;
+}
+
+.tipoCargaContainer select:focus {
+  border-color: #007bff;
+  /* Color de borde cuando está en foco */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  /* Sombra al hacer focus */
+}
+
+.tipoCargaContainer select:hover {
+  background-color: #e6e6e6;
+  /* Color de fondo cuando se hace hover */
+}
+
+.tipoCargaContainer select option {
+  background-color: #fff;
+  /* Color de fondo del dropdown */
+  color: #333;
+  /* Color de texto del dropdown */
+  padding: 10px;
+}
 
 
 .formStepsContainer {
@@ -100,111 +106,108 @@ html, body {
   flex: auto;
   flex-direction: column;
   align-items: center;
-  
+
+}
+
+.fieldContainer {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px;
 }
 
 .fieldLabel {
-  display: flex;
-  gap: 10px;
-  font-size: 16px; /* Tamaño de fuente */
-  font-weight: 500; /* Peso de la fuente */
-  color: #333; /* Color de texto */
+  font-size: 16px;
+  font-weight: 500;
   text-align: center;
-  align-items: center; /* Alineación vertical de los elementos */
-  flex-direction: row;
-  padding: 5px;
+  justify-content: center;
+  color: #333;
   width: 100%;
-  justify-content: space-between;
-  flex: 1;
+  display: flex;
+  width: 50%;
   margin-bottom: 5px;
 }
 
 .dateLabel {
   text-align: center;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  flex: auto;
-  justify-content: space-between;
-  font-size: 14px; /* Tamaño de fuente un poco más pequeño para fechas */
-  color: #007bff; /* Color específico para el label de fecha */
-  font-weight: bold; /* Negrita para destacar la fecha */
-  padding: 5px; /* Añade algo de relleno */
-  border-radius: 5px; /* Esquinas redondeadas */
-  width: 100%;
+  font-size: 16px;
+  color: #007bff;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  width: 50%;
 }
 
 
-.fieldLabel input {
-  width: 100%; /* El input ocupa todo el ancho disponible */
-  padding: 10px; /* Espacio interno para que el texto no esté pegado a los bordes */
-  font-size: 16px; /* Tamaño de la fuente similar a los labels */
-  border: 1px solid #ddd; /* Borde ligero y neutral */
-  border-radius: 5px; /* Esquinas redondeadas */
-  outline: none; /* Remueve el borde azul por defecto al hacer foco */
-  transition: border-color 0.3s ease; /* Transición suave en el borde */
+.fieldContainer input {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-.fieldLabel input:focus {
-  border-color: #007bff; /* Cambia el color del borde al hacer foco */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra azul sutil al enfocar */
-}
-
-.fieldLabel input[type="date"] {
-  font-size: 14px; /* Tamaño de fuente ligeramente menor para inputs de fecha */
-}
-
-.fieldLabel input[type="submit"] {
-  background-color: #007bff; /* Color de fondo para botones */
-  color: white; /* Color de texto para botones */
-  cursor: pointer; /* Cambia el cursor a un puntero */
-  border: none; /* Remueve el borde para botones */
-  transition: background-color 0.3s ease; /* Transición suave del fondo */
-}
-
-.fieldLabel input[type="submit"]:hover {
-  background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+.fieldContainer input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 
-.fieldLabel input[type="date"] {
+
+.fieldContainer input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.fieldContainer input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
+.fieldContainer input[type="date"] {
   width: 100%;
   padding: 10px;
   flex: auto;
   font-size: 16px;
-  border: 1px solid #ccc; /* Borde gris claro */
-  border-radius: 5px; /* Bordes redondeados */
-  background-color: #f9f9f9; /* Fondo suave */
-  color: #333; /* Color de texto */
-  appearance: none; /* Quita los estilos por defecto del navegador */
-  outline: none; /* Elimina el borde de enfoque por defecto */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+  border: 1px solid #ccc;
+  width: 50%;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  appearance: none;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.fieldLabel input[type="date"]::placeholder {
-  color: #aaa; /* Color del placeholder */
+.fieldContainer input[type="date"]::placeholder {
+  color: #aaa;
 }
 
-.fieldLabel input[type="date"]:focus {
-  border-color: #007bff; /* Cambia el color del borde al enfocar */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra sutil azul al enfocar */
-  background-color: #fff; /* Fondo blanco al hacer foco */
+.fieldContainer input[type="date"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  background-color: #fff;
 }
 
-.fieldLabel input[type="date"]:hover {
-  border-color: #007bff; /* Cambia el color del borde al pasar el mouse */
+.fieldContainer input[type="date"]:hover {
+  border-color: #007bff;
 }
 
-/* Estilos adicionales para mejorar la apariencia del ícono del calendario */
-.fieldLabel input[type="date"]::-webkit-calendar-picker-indicator {
-  background-color: #007bff; /* Color del ícono del calendario */
+.fieldContainer input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: #007bff;
   padding: 5px;
   border-radius: 5px;
-  cursor: pointer; /* Cambia el cursor cuando se pasa sobre el ícono */
+  cursor: pointer;
 }
-
-
-
 
 
 .adjuntarFotosContainer {

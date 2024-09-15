@@ -6,38 +6,62 @@ const DomicilioForm = ({ value, name, tipoFormulario, handleChange }) => {
       <div className="domicilioContainer">
         <h3>Domicilio de {tipoFormulario}</h3>
 
-        <label className="fieldLabel">
-          Provincia
+        <div className="fieldContainer">
+          <label className="fieldLabel">
+            Provincia
+          </label>
           <input
             type="text"
             value={value.provincia}
             onChange={handleChange}
             name={`provincia${name}`}
           />
-        </label>
+        </div>
 
-        <label className="fieldLabel">
-          Localidad
+
+        <div className="fieldContainer">
+          <label className="fieldLabel">
+            Localidad
+          </label>
           <input
             type="text"
             value={value.localidad}
             onChange={handleChange}
             name={`localidad${name}`}
           />
-        </label>
+        </div>
 
-        <label className="fieldLabel">
-          Calle y Número
+
+        <div className="fieldContainer">
+          <label className="fieldLabel">
+            Calle
+          </label>
           <input
             type="text"
             value={value.calle}
             onChange={handleChange}
             name={`calle${name}`}
           />
-        </label>
+        </div>
 
-        <label className="fieldLabel">
-          Referencia
+
+        <div className="fieldContainer">
+          <label className="fieldLabel">
+            Número
+          </label>
+          <input
+            type="text"
+            value={value.numero}
+            onChange={handleChange}
+            name={`numero${name}`}
+          />
+        </div>
+
+
+        <div className="fieldContainer">
+          <label className="fieldLabel">
+            Referencia
+          </label>
           <input
             type="text"
             name={`referencia${name}`}
@@ -45,19 +69,20 @@ const DomicilioForm = ({ value, name, tipoFormulario, handleChange }) => {
             onChange={handleChange}
             placeholder="Opcional"
           />
-        </label>
+        </div>
 
-        <div>
+
+        <div className="fieldContainer">
           <label className="dateLabel fieldLabel">
             Fecha de {tipoFormulario}
-            <input
-              type="date"
-              value={value.fecha}
-              name={`fecha${name}`}
-              onChange={handleChange}
-              min={new Date().toISOString().split("T")[0]}
-            />
           </label>
+          <input
+            type="date"
+            value={value.fecha}
+            name={`fecha${name}`}
+            onChange={handleChange}
+            min={new Date().toISOString().split("T")[0]}
+          />
         </div>
       </div>
     </>

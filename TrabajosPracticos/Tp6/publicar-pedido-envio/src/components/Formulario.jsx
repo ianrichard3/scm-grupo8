@@ -9,12 +9,14 @@ const Formulario = ({ onSubmit }) => {
     tipoCarga: "",
 
     calleRetiro: "",
+    numeroRetiro: "",
     localidadRetiro: "",
     provinciaRetiro: "",
     referenciaRetiro: "",
     fechaRetiro: "",
 
     calleEntrega: "",
+    numeroEntrega: "",
     localidadEntrega: "",
     provinciaEntrega: "",
     referenciaEntrega: "",
@@ -65,6 +67,7 @@ const Formulario = ({ onSubmit }) => {
           name={"Retiro"}
           value={{
             calle: formData.calleRetiro,
+            numero: formData.numeroRetiro,
             localidad: formData.localidadRetiro,
             provincia: formData.provinciaRetiro,
             referencia: formData.referenciaRetiro,
@@ -77,6 +80,7 @@ const Formulario = ({ onSubmit }) => {
         <DomicilioForm
           value={{
             calle: formData.calleEntrega,
+            numero: formData.numeroEntrega,
             localidad: formData.localidadEntrega,
             provincia: formData.provinciaEntrega,
             referencia: formData.referenciaEntrega,
