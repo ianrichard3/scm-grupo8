@@ -153,10 +153,56 @@ body {
   transition: border-color 0.3s ease;
 }
 
+
 .fieldContainer input:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+
+
+
+
+.fieldContainer select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  outline: none;
+  width: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 15px;
+}
+
+.fieldContainer select:focus {
+  border-color: #007bff;
+  /* Color de borde cuando está en foco */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  /* Sombra al hacer focus */
+}
+
+.fieldContainer select:hover {
+  background-color: #e6e6e6;
+  /* Color de fondo cuando se hace hover */
+}
+
+.fieldContainer select option {
+  background-color: #fff;
+  /* Color de fondo del dropdown */
+  color: #333;
+  /* Color de texto del dropdown */
+  padding: 10px;
+}
+
 
 
 

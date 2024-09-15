@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { provincias } from "../data/mockData";
 
 const DomicilioForm = ({ value, name, tipoFormulario, handleChange }) => {
   return (
@@ -10,12 +10,24 @@ const DomicilioForm = ({ value, name, tipoFormulario, handleChange }) => {
           <label className="fieldLabel">
             Provincia
           </label>
-          <input
+          {/* <input
             type="text"
             value={value.provincia}
             onChange={handleChange}
             name={`provincia${name}`}
-          />
+          /> */}
+          <select
+            value={value.provincia}
+            onChange={handleChange}
+            name={`provincia${name}`}>
+            <option value="">Seleccione..</option>
+            {provincias.map((provincia, index) => (
+              <option key={index} value={provincia}>{provincia}</option>
+            ))}
+
+          </select>
+
+
         </div>
 
 
