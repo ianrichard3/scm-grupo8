@@ -2,7 +2,7 @@ const AdjuntarFotosForm = (formData, { handleFileChange }) => {
   return (
     <>
       <div className="adjuntarFotosContainer">
-        <h3>Adjuntar Fotos (Opcional)</h3>
+        <h3>(Opcional)</h3>
         <input
           type="file"
           multiple

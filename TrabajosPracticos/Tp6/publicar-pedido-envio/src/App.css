@@ -8,13 +8,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0;
+  background-color: #f3f3f3;
 }
 
-
 .mainBtn {
-  background-color: #4ea5bd;
-  color: black;
+  background-color: #0077b6;
+  color: white;
   border: none;
   padding: 0.75rem 1.5rem;
   width: 100%;
@@ -25,11 +24,31 @@ body {
   transition: background-color 300ms ease;
 }
 
+.mainBtn:hover {
+  background-color: #00b4d8;
+  /* Color de hover del botón */
+}
+
+
+.submitBtn {
+  background-color: #caf0f8;
+  color: #0077b6;
+  font-weight: bold;
+}
+
+.submitBtn:hover {
+  box-shadow: #03045e;
+  font-weight: 400;
+  background-color: white;
+  color: black;
+}
 
 .subtitle {
   font-size: 30px;
   margin-top: 0px;
   margin-bottom: 30px;
+  color: #03045e;
+  /* Color del texto del subtítulo */
 }
 
 .formContentContainer {
@@ -38,26 +57,26 @@ body {
   padding-bottom: 30px;
   padding-inline: 30px;
   border-radius: 15px;
-  box-shadow: 0px 0px 10px black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(168, 168, 236);
+  background-color: #90e0ef;
+  /* Color de fondo de la tarjeta */
   box-sizing: border-box;
 }
 
 .formHeader {
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #03045e;
   margin-bottom: 20px;
   padding-bottom: 20px;
   font-size: 34px;
   text-align: center;
-  display: flex;
-  justify-content: center;
+  color: #03045e;
+  /* Color del encabezado */
 }
-
 
 .tipoCargaContainer {
   align-items: center;
@@ -65,51 +84,10 @@ body {
   flex-direction: column;
 }
 
-
 .tipoCargaContainer label {
   margin-bottom: 10px;
-}
-
-.tipoCargaContainer select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: #f0f0f0;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  padding: 10px 15px;
-  font-size: 16px;
-  text-align: center;
-  font-weight: 500;
-  color: #333;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 15px;
-  margin-bottom: 20px;
-}
-
-.tipoCargaContainer select:focus {
-  border-color: #007bff;
-  /* Color de borde cuando está en foco */
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-  /* Sombra al hacer focus */
-}
-
-.tipoCargaContainer select:hover {
-  background-color: #e6e6e6;
-  /* Color de fondo cuando se hace hover */
-}
-
-.tipoCargaContainer select option {
-  background-color: #fff;
-  /* Color de fondo del dropdown */
-  color: #333;
-  /* Color de texto del dropdown */
-  padding: 10px;
+  color: #03045e;
+  /* Color de los labels */
 }
 
 
@@ -123,13 +101,10 @@ body {
   justify-content: space-between;
 }
 
-
 .domicilioContainer {
   display: flex;
-  flex: auto;
   flex-direction: column;
   align-items: center;
-
 }
 
 .fieldContainer {
@@ -146,124 +121,38 @@ body {
   font-size: 16px;
   font-weight: 500;
   text-align: center;
-  justify-content: center;
-  color: #333;
-  width: 100%;
-  display: flex;
-  width: 50%;
+  color: #03045e;
   margin-bottom: 5px;
 }
-
-.dateLabel {
-  text-align: center;
-  font-size: 16px;
-  color: #007bff;
-  font-weight: bold;
-  padding: 5px;
-  border-radius: 5px;
-  width: 100%;
-}
-
 
 .fieldContainer input {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid #00b4d8;
   border-radius: 5px;
   outline: none;
   transition: border-color 0.3s ease;
 }
 
-.fieldContainer input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
 
-.fieldContainer select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: #f0f0f0;
-  border: 2px solid #ccc;
+select {
+  background-color: #caf0f8;
+  border: 2px solid #00b4d8;
   border-radius: 8px;
   padding: 10px 15px;
   font-size: 16px;
   font-weight: 500;
-  color: #333;
+  color: #03045e;
   outline: none;
-  width: 50%;
+  width: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 15px;
 }
 
-.fieldContainer select:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-}
-
-.fieldContainer select:hover {
-  background-color: #e6e6e6;
-  /* Color de fondo cuando se hace hover */
-}
-
-.fieldContainer select option {
-  background-color: #fff;
-  /* Color de fondo del dropdown */
-  color: #333;
-  /* Color de texto del dropdown */
-  padding: 10px;
-}
-
-
-
-.fieldContainer input[type="date"] {
-  width: 100%;
-  padding: 10px;
-  flex: auto;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  width: 50%;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  color: #333;
-  appearance: none;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.fieldContainer input[type="date"]::placeholder {
-  color: #aaa;
-}
-
-.fieldContainer input[type="date"]:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  background-color: #fff;
-}
-
-.fieldContainer input[type="date"]:hover {
-  border-color: #007bff;
-}
-
-.fieldContainer input[type="date"]::-webkit-calendar-picker-indicator {
-  background-color: #007bff;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-
-.adjuntarFotosContainer {
-  display: flex;
-  flex: auto;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+.tipoCargaContainer select {
+  margin-bottom: 20px;
 }
 
 
@@ -273,5 +162,18 @@ body {
   width: 100%;
   flex-direction: row;
   gap: 10px;
-  margin: 10px
+  margin: 10px;
+}
+
+.adjuntarFotosContainer {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.adjuntarFotosContainer h3 {
+  font-size: 20px;
+  margin-top: 0px;
 }

@@ -138,7 +138,7 @@ const Formulario = ({ onSubmit }) => {
         {step < 4 && <button className="mainBtn" type="submit" onClick={handleNextStep}>Siguiente</button>}
       </div>
 
-      {step === 4 && <button type="submit">Terminar</button>}
+      {step === 4 && <button className="mainBtn submitBtn" type="submit">Terminar</button>}
     </form>
   );
 };
