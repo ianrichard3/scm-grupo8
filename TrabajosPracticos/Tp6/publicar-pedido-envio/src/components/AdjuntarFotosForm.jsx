@@ -3,9 +3,9 @@ const AdjuntarFotosForm = (formData, { handleFileChange }) => {
     <>
       <div className="adjuntarFotosContainer">
         <h3>(Opcional)</h3>
-        <input
+        <input className="imageInput"
           type="file"
-          multiple
+          multiple={true}
           name="foto"
           accept=".jpg, .png"
           onChange={handleFileChange}

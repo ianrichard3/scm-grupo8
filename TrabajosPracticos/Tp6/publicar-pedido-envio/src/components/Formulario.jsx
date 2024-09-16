@@ -45,6 +45,12 @@ const Formulario = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Solo mostrar popup y enviar el formulario si es el último paso
+    if (step !== 4) {
+      return;  // No hacer nada si no es el último paso
+    }
+
     // Validaciones
     if (
       new Date(formData.fechaRetiro) < new Date() ||
@@ -53,11 +59,14 @@ const Formulario = ({ onSubmit }) => {
       alert("Las fechas no son válidas");
       return;
     }
+
     onSubmit(formData);
     setFormData(initialState);
 
-    console.log(formData)
+    // Aquí el código para mostrar el popup
+    togglePopup();
   };
+
 
   const [step, setStep] = useState(1)
   const [title, setTitle] = useState("Formulario")
@@ -78,7 +87,7 @@ const Formulario = ({ onSubmit }) => {
 
 
   return (
-    <form className="formContentContainer" onSubmit={handleSubmit}>
+    <div className="formContentContainer">
       <HeaderForm title={title} />
 
       {step === 1 &&
@@ -87,8 +96,6 @@ const Formulario = ({ onSubmit }) => {
           value={formData.tipoCarga}
           handleChange={handleChange}
         />}
-
-
 
       <div className="formStepsContainer">
         {step === 2 &&
@@ -129,17 +136,16 @@ const Formulario = ({ onSubmit }) => {
             handleFileChange={handleFileChange}
             formData={formData}
           />
-
         }
 
       </div>
       <div className="navButtonsContainer">
         {step > 1 && <button className="mainBtn" onClick={handlePrevStep}>Volver</button>}
-        {step < 4 && <button className="mainBtn" type="submit" onClick={handleNextStep}>Siguiente</button>}
+        {step < 4 && <button className="mainBtn" onClick={handleNextStep}>Siguiente</button>}
       </div>
 
-      {step === 4 && <button className="mainBtn submitBtn" type="submit">Terminar</button>}
-    </form>
+      {step === 4 && <button className="mainBtn submitBtn" onClick={() => onSubmit()}>Terminar</button>}
+    </div>
   );
 };
 
