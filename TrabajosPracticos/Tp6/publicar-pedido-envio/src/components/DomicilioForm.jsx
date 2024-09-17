@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { provincias } from "../data/mockData";
+import axios from "axios";
 
 const DomicilioForm = ({
   onChange,
@@ -10,10 +10,10 @@ const DomicilioForm = ({
   const [formData, setFormData] = useState(dataDomicilioForm);
   const [error, setError] = useState(
     !dataDomicilioForm.provincia ||
-      !dataDomicilioForm.localidad ||
-      !dataDomicilioForm.calle ||
-      !dataDomicilioForm.numero ||
-      !dataDomicilioForm.fecha
+    !dataDomicilioForm.localidad ||
+    !dataDomicilioForm.calle ||
+    !dataDomicilioForm.numero ||
+    !dataDomicilioForm.fecha
   );
 
   useEffect(() => {
@@ -40,14 +40,59 @@ const DomicilioForm = ({
   useEffect(() => {
     const { provincia, localidad, calle, numero, fecha } = formData;
 
-    // Valida que todos los campos requeridos estén llenos
     const isError = !provincia || !localidad || !calle || !numero || !fecha;
 
     setError(isError);
 
-    // Propaga los datos y el estado de error al componente padre
     onChange(formData, isError, tipoFormulario);
   }, [formData, onChange, tipoFormulario]);
+
+
+  // selectores
+  const [provincias, setProvincias] = useState([])
+  const [localidades, setLocalidades] = useState([])
+
+  // Obtener provincias al cargar el componente
+  useEffect(() => {
+    const fetchProvincias = async () => {
+      try {
+        const response = await axios.get('https://apis.datos.gob.ar/georef/api/provincias?orden=nombre');
+
+        const responseDto = response.data.provincias.map((prov) => {
+          return prov.nombre
+        })
+
+        setProvincias(responseDto);
+
+      } catch (error) {
+        console.error('Error al obtener las provincias:', error);
+      }
+    };
+    fetchProvincias();
+  }, []);
+
+  // Actualizar localidades cuando se selecciona una provincia
+  useEffect(() => {
+    console.log("entro")
+    const fetchLocalidades = async () => {
+      if (formData.provincia) {
+        try {
+          const response = await axios.get(`https://apis.datos.gob.ar/georef/api/localidades?max=1000&orden=nombre&provincia=${formData.provincia}`);
+          const responseDto = response.data.localidades.map((loc) => {
+            return loc.nombre
+          })
+          console.log(response.data.localidades)
+          setLocalidades(responseDto);
+        } catch (error) {
+          console.error('Error al obtener las localidades:', error);
+        }
+      }
+      else {
+        setLocalidades([])
+      }
+    };
+    fetchLocalidades();
+  }, [formData.provincia]);
 
   return (
     <form>
@@ -71,13 +116,19 @@ const DomicilioForm = ({
 
         <div className="fieldContainer">
           <label className="fieldLabel">Localidad*</label>
-          <input
-            type="text"
+          <select
             name="localidad"
             value={formData.localidad}
             onChange={handleChange}
             className={error ? "errorField" : null}
-          />
+          >
+            <option value="">Seleccione..</option>
+            {localidades.map((loc, index) => (
+              <option key={index} value={loc}>
+                {loc}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="fieldContainer">
