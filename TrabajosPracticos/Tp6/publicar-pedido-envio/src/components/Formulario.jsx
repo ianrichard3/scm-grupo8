@@ -3,6 +3,8 @@ import DomicilioForm from "./DomicilioForm";
 import TipoCargaForm from "./TipoCargaForm";
 import AdjuntarFotosForm from "./AdjuntarFotosForm";
 import HeaderForm from "./HeaderForm";
+import transportistas from "../data/mockTransportistas";
+import emailjs from "emailjs-com"
 
 const stepTitles = [
   "Formulario",
@@ -47,7 +49,43 @@ const Formulario = ({ onSubmit }) => {
     setStep(step - 1);
   };
 
-  const handleSubmit = () => {
+
+  // Envio de email
+  const [email, setEmail] = useState("")
+
+  const sendEmail = (toEmail, toName, localidadRetiro, localidadEntrega, fechaRetiro, fechaEntrega) => {
+    const templateParams = {
+      destinatario: toEmail,
+      nombre: toName,
+      locRetiro: localidadRetiro,
+      locEntrega: localidadEntrega,
+      fecRetiro: fechaRetiro,
+      fecEntrega: fechaEntrega,
+    };
+
+    emailjs.send('service_n52m0kn', 'template_tj1hils', templateParams, 'g0LAslC8CH8ichX7q')
+      .then((response) => {
+        console.log(`Correo enviado a ${toName} con éxito!`, response.status, response.text);
+      }, (err) => {
+        console.error('Error al enviar el correo', err);
+      });
+  };
+
+  const enviarCorreoATransportistas = async (localidadRetiro, localidadEntrega, fechaRetiro, fechaEntrega) => {
+
+    // Filtrar los transportistas que cubren la localidad de retiro o entrega
+    const transportistasFiltrados = transportistas.filter(t =>
+      t.zonaCobertura.includes(localidadRetiro) || t.zonaCobertura.includes(localidadEntrega)
+    );
+
+    // Enviar correo a cada transportista filtrado
+    for (const transportista of transportistasFiltrados) {
+      console.log(transportista.mail, transportista.nombre, localidadRetiro, localidadEntrega, fechaRetiro, fechaEntrega);
+      await sendEmail(transportista.mail, transportista.nombre, localidadRetiro, localidadEntrega, fechaRetiro, fechaEntrega);
+    }
+  };
+
+  const handleSubmit = async () => {
     const returnData = {
       tipoCarga: cargaFormData,
       domicilioRetiro: domicilioRetiroData,
@@ -56,6 +94,15 @@ const Formulario = ({ onSubmit }) => {
     };
 
     onSubmit(returnData);
+
+    // send email
+    await enviarCorreoATransportistas(
+      domicilioRetiroData.localidad,
+      domicilioEntregaData.localidad,
+      domicilioEntregaData.fecha,
+      domicilioEntregaData.fecha
+    )
+
   };
 
   useEffect(() => {
@@ -77,6 +124,9 @@ const Formulario = ({ onSubmit }) => {
     setIsError(error);
     setFotos(formValue);
   };
+
+
+
 
   return (
     <div className="formContentContainer">
