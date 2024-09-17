@@ -73,7 +73,6 @@ const DomicilioForm = ({
 
   // Actualizar localidades cuando se selecciona una provincia
   useEffect(() => {
-    console.log("entro")
     const fetchLocalidades = async () => {
       if (formData.provincia) {
         try {
@@ -81,7 +80,6 @@ const DomicilioForm = ({
           const responseDto = response.data.localidades.map((loc) => {
             return loc.nombre
           })
-          console.log(response.data.localidades)
           setLocalidades(responseDto);
         } catch (error) {
           console.error('Error al obtener las localidades:', error);
@@ -145,7 +143,10 @@ const DomicilioForm = ({
         <div className="fieldContainer">
           <label className="fieldLabel">Número*</label>
           <input
-            type="text"
+            type="number"
+            step={1}
+            min={0}
+            max={10000}
             name="numero"
             value={formData.numero}
             onChange={handleChange}
