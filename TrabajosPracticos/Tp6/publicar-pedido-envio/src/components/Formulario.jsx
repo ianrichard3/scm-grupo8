@@ -9,39 +9,25 @@ const stepTitles = ["Formulario", "Domicilio de Retiro", "Domicilio de Entrega",
 
 const Formulario = ({ onSubmit }) => {
 
-
-
-  const initialState = {
-    tipoCarga: "",
-
+  const [cargaFormData, setCargaFormData] = useState("");
+  const [domicilioRetiroData, setDomicilioRetiroData] = useState({
     calleRetiro: "",
     numeroRetiro: "",
     localidadRetiro: "",
     provinciaRetiro: "",
     referenciaRetiro: "",
     fechaRetiro: "",
-
+  })
+  const [domicilioEntregaData, setDomicilioEntregaData] = useState({
     calleEntrega: "",
     numeroEntrega: "",
     localidadEntrega: "",
     provinciaEntrega: "",
     referenciaEntrega: "",
     fechaEntrega: "",
+  })
+  const [fotos, setFotos] = useState([])
 
-    fotos: [],
-  };
-
-  const [formData, setFormData] = useState(initialState);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleFileChange = (e) => {
-    const files = Array.from(e.target.files);
-    setFormData({ ...formData, fotos: files });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,9 +56,19 @@ const Formulario = ({ onSubmit }) => {
 
   const [step, setStep] = useState(1)
   const [title, setTitle] = useState("Formulario")
+  const [isError, setIsError] = useState(true)
+
+
 
   const handleNextStep = () => {
-    setStep(step + 1)
+    if (!isError) setStep(step + 1)
+
+
+    // Aca hay que guardar la data para poder poner volver 
+    // y que el componente no renderice todo vacio de vuelta
+
+
+
   }
 
   const handlePrevStep = () => {
@@ -85,6 +81,24 @@ const Formulario = ({ onSubmit }) => {
   }, [step])
 
 
+  const handleCargaChange = (formValue, error) => {
+    setIsError(error)
+    setCargaFormData(formValue)
+  }
+
+  const handleDomicilioChange = (formValue, error, type) => {
+    setIsError(error)
+    if (type === "Retiro") setDomicilioRetiroData(formValue)
+    else setDomicilioEntregaData(formValue)
+  }
+
+  const handleFileChange = (formValue, error) => {
+    setIsError(error)
+    setFotos(formValue)
+  }
+
+
+
 
   return (
     <div className="formContentContainer">
@@ -92,56 +106,35 @@ const Formulario = ({ onSubmit }) => {
 
       {step === 1 &&
         <TipoCargaForm
-          name="tipoCarga"
-          value={formData.tipoCarga}
-          handleChange={handleChange}
+          onChange={handleCargaChange}
         />}
 
       <div className="formStepsContainer">
         {step === 2 &&
           <DomicilioForm
-            name={"Retiro"}
-            value={{
-              calle: formData.calleRetiro,
-              numero: formData.numeroRetiro,
-              localidad: formData.localidadRetiro,
-              provincia: formData.provinciaRetiro,
-              referencia: formData.referenciaRetiro,
-              fecha: formData.fechaRetiro,
-            }}
-            handleChange={handleChange}
             tipoFormulario="Retiro"
+            onChange={handleDomicilioChange}
           />
         }
 
         {step === 3 &&
 
           <DomicilioForm
-            value={{
-              calle: formData.calleEntrega,
-              numero: formData.numeroEntrega,
-              localidad: formData.localidadEntrega,
-              provincia: formData.provinciaEntrega,
-              referencia: formData.referenciaEntrega,
-              fecha: formData.fechaEntrega,
-            }}
-            handleChange={handleChange}
+            onChange={handleDomicilioChange}
             tipoFormulario="Entrega"
-            name={"Entrega"}
           />
         }
 
         {step === 4 &&
           <AdjuntarFotosForm
-            handleFileChange={handleFileChange}
-            formData={formData}
+            onChange={handleFileChange}
           />
         }
 
       </div>
       <div className="navButtonsContainer">
         {step > 1 && <button className="mainBtn" onClick={handlePrevStep}>Volver</button>}
-        {step < 4 && <button className="mainBtn" onClick={handleNextStep}>Siguiente</button>}
+        {step < 4 && <button className={`mainBtn ${isError && "disabledBtn"}`} onClick={handleNextStep}>Siguiente</button>}
       </div>
 
       {step === 4 && <button className="mainBtn submitBtn" onClick={() => onSubmit()}>Terminar</button>}

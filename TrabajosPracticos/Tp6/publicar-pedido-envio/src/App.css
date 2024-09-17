@@ -154,6 +154,7 @@ select {
 }
 
 
+
 .navButtonsContainer {
   display: flex;
   justify-content: center;
@@ -244,4 +245,15 @@ select {
 
 .imageInput::file-selector-button:hover {
   background-color: white;
+}
+
+
+
+.errorField {
+  border: 1px solid red;
+}
+
+
+.disabledBtn {
+  background-color: rgb(210, 210, 210);
 }

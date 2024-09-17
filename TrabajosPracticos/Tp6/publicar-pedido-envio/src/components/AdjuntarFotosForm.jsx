@@ -1,4 +1,23 @@
-const AdjuntarFotosForm = (formData, { handleFileChange }) => {
+import { useState } from "react";
+
+const AdjuntarFotosForm = ({ onChange }) => {
+
+  const [files, setFiles] = useState([])
+  const [error, setError] = useState(true)
+
+  const handleChange = (e) => {
+    const selectedFiles = Array.from(e.target.files); // Convierte la lista de archivos en un array
+
+    let isError = false;
+    selectedFiles.forEach((file) => {
+      if (file.size > 5000000) {
+        isError = true;
+      }
+    });
+    setFiles(selectedFiles);
+    setError(isError);
+    onChange(selectedFiles, isError);
+  };
   return (
     <>
       <div className="adjuntarFotosContainer">
@@ -7,8 +26,9 @@ const AdjuntarFotosForm = (formData, { handleFileChange }) => {
           type="file"
           multiple={true}
           name="foto"
+          value={files}
           accept=".jpg, .png"
-          onChange={handleFileChange}
+          onChange={handleChange}
         />
       </div>
     </>

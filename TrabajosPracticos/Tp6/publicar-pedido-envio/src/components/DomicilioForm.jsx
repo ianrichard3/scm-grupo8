@@ -1,96 +1,98 @@
+import { useEffect, useState } from "react";
 import { provincias } from "../data/mockData";
 
-const DomicilioForm = ({ value, name, tipoFormulario, handleChange }) => {
+const DomicilioForm = ({ onChange, tipoFormulario }) => {
+  const [formData, setFormData] = useState({
+    provincia: "",
+    localidad: "",
+    calle: "",
+    numero: "",
+    referencia: "",
+    fecha: "",
+  });
+  const [error, setError] = useState(true);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+
+  }
+
+  useEffect(() => {
+    const { provincia, localidad, calle, numero, fecha } = formData;
+
+    // Valida que todos los campos requeridos estén llenos
+    const isError = !provincia || !localidad || !calle || !numero || !fecha;
+
+    setError(isError);
+
+    // Propaga los datos y el estado de error al componente padre
+    onChange(formData, isError, tipoFormulario);
+  }, [formData, onChange, tipoFormulario]);
+
+
   return (
-    <>
+    <form>
       <div className="domicilioContainer">
-
         <div className="fieldContainer">
-          <label className="fieldLabel">
-            Provincia
-          </label>
-          <select
-            value={value.provincia}
-            onChange={handleChange}
-            name={`provincia${name}`}>
+          <label className="fieldLabel">Provincia*</label>
+          <select name="provincia" value={formData.provincia} onChange={handleChange}
+            className={error ? "errorField" : null}>
             <option value="">Seleccione..</option>
-            {provincias.map((provincia, index) => (
-              <option key={index} value={provincia}>{provincia}</option>
+            {provincias.map((prov, index) => (
+              <option key={index} value={prov}>
+                {prov}
+              </option>
             ))}
-
           </select>
-
-
         </div>
 
-
         <div className="fieldContainer">
-          <label className="fieldLabel">
-            Localidad
-          </label>
-          <input
-            type="text"
-            value={value.localidad}
-            onChange={handleChange}
-            name={`localidad${name}`}
-          />
+          <label className="fieldLabel">Localidad*</label>
+          <input type="text" name="localidad" value={formData.localidad} onChange={handleChange}
+            className={error ? "errorField" : null} />
         </div>
 
-
         <div className="fieldContainer">
-          <label className="fieldLabel">
-            Calle
-          </label>
-          <input
-            type="text"
-            value={value.calle}
-            onChange={handleChange}
-            name={`calle${name}`}
-          />
+          <label className="fieldLabel">Calle*</label>
+          <input type="text" name="calle" value={formData.calle} onChange={handleChange}
+            className={error ? "errorField" : null} />
         </div>
 
-
         <div className="fieldContainer">
-          <label className="fieldLabel">
-            Número
-          </label>
-          <input
-            type="text"
-            value={value.numero}
-            onChange={handleChange}
-            name={`numero${name}`}
-          />
+          <label className="fieldLabel">Número*</label>
+          <input type="text" name="numero" value={formData.numero} onChange={handleChange}
+            className={error ? "errorField" : null} />
         </div>
 
-
         <div className="fieldContainer">
-          <label className="fieldLabel">
-            Referencia
-          </label>
+          <label className="fieldLabel">Referencia</label>
           <input
             type="text"
-            name={`referencia${name}`}
-            value={value.referencia}
+            name="referencia"
+            value={formData.referencia}
             onChange={handleChange}
             placeholder="Opcional"
           />
         </div>
 
-
         <div className="fieldContainer">
-          <label className="dateLabel fieldLabel">
-            Fecha de {tipoFormulario}
-          </label>
+          <label className="fieldLabel">Fecha de {tipoFormulario}</label>
           <input
             type="date"
-            value={value.fecha}
-            name={`fecha${name}`}
+            name="fecha"
+            value={formData.fecha}
             onChange={handleChange}
             min={new Date().toISOString().split("T")[0]}
+            className={error ? "errorField" : null}
           />
         </div>
       </div>
-    </>
+    </form >
   );
 };
 
