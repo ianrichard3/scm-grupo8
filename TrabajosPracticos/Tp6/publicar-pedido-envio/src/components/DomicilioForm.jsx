@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import { provincias } from "../data/mockData";
 
-const DomicilioForm = ({ onChange, tipoFormulario }) => {
-  const [formData, setFormData] = useState({
-    provincia: "",
-    localidad: "",
-    calle: "",
-    numero: "",
-    referencia: "",
-    fecha: "",
-  });
-  const [error, setError] = useState(true);
+const DomicilioForm = ({ onChange, tipoFormulario, dataDomicilioForm }) => {
+  const [formData, setFormData] = useState(dataDomicilioForm);
+  const [error, setError] = useState(
+    !dataDomicilioForm.provincia ||
+      !dataDomicilioForm.localidad ||
+      !dataDomicilioForm.calle ||
+      !dataDomicilioForm.numero ||
+      !dataDomicilioForm.fecha
+  );
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,8 +18,7 @@ const DomicilioForm = ({ onChange, tipoFormulario }) => {
       ...formData,
       [name]: value,
     });
-
-  }
+  };
 
   useEffect(() => {
     const { provincia, localidad, calle, numero, fecha } = formData;
@@ -34,14 +32,17 @@ const DomicilioForm = ({ onChange, tipoFormulario }) => {
     onChange(formData, isError, tipoFormulario);
   }, [formData, onChange, tipoFormulario]);
 
-
   return (
     <form>
       <div className="domicilioContainer">
         <div className="fieldContainer">
           <label className="fieldLabel">Provincia*</label>
-          <select name="provincia" value={formData.provincia} onChange={handleChange}
-            className={error ? "errorField" : null}>
+          <select
+            name="provincia"
+            value={formData.provincia}
+            onChange={handleChange}
+            className={error ? "errorField" : null}
+          >
             <option value="">Seleccione..</option>
             {provincias.map((prov, index) => (
               <option key={index} value={prov}>
@@ -53,20 +54,35 @@ const DomicilioForm = ({ onChange, tipoFormulario }) => {
 
         <div className="fieldContainer">
           <label className="fieldLabel">Localidad*</label>
-          <input type="text" name="localidad" value={formData.localidad} onChange={handleChange}
-            className={error ? "errorField" : null} />
+          <input
+            type="text"
+            name="localidad"
+            value={formData.localidad}
+            onChange={handleChange}
+            className={error ? "errorField" : null}
+          />
         </div>
 
         <div className="fieldContainer">
           <label className="fieldLabel">Calle*</label>
-          <input type="text" name="calle" value={formData.calle} onChange={handleChange}
-            className={error ? "errorField" : null} />
+          <input
+            type="text"
+            name="calle"
+            value={formData.calle}
+            onChange={handleChange}
+            className={error ? "errorField" : null}
+          />
         </div>
 
         <div className="fieldContainer">
           <label className="fieldLabel">Número*</label>
-          <input type="text" name="numero" value={formData.numero} onChange={handleChange}
-            className={error ? "errorField" : null} />
+          <input
+            type="text"
+            name="numero"
+            value={formData.numero}
+            onChange={handleChange}
+            className={error ? "errorField" : null}
+          />
         </div>
 
         <div className="fieldContainer">
@@ -92,7 +108,7 @@ const DomicilioForm = ({ onChange, tipoFormulario }) => {
           />
         </div>
       </div>
-    </form >
+    </form>
   );
 };
 
