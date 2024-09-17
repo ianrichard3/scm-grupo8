@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { provincias } from "../data/mockData";
 
-const DomicilioForm = ({ onChange, tipoFormulario, dataDomicilioForm }) => {
+const DomicilioForm = ({
+  onChange,
+  tipoFormulario,
+  dataDomicilioForm,
+  fechaRetiro,
+}) => {
   const [formData, setFormData] = useState(dataDomicilioForm);
   const [error, setError] = useState(
     !dataDomicilioForm.provincia ||
@@ -10,6 +15,18 @@ const DomicilioForm = ({ onChange, tipoFormulario, dataDomicilioForm }) => {
       !dataDomicilioForm.numero ||
       !dataDomicilioForm.fecha
   );
+
+  useEffect(() => {
+    if (
+      fechaRetiro &&
+      new Date(fechaRetiro) > new Date(dataDomicilioForm.fecha)
+    ) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        fecha: fechaRetiro,
+      }));
+    }
+  }, [fechaRetiro, dataDomicilioForm.fecha]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -103,7 +120,9 @@ const DomicilioForm = ({ onChange, tipoFormulario, dataDomicilioForm }) => {
             name="fecha"
             value={formData.fecha}
             onChange={handleChange}
-            min={new Date().toISOString().split("T")[0]}
+            min={
+              fechaRetiro ? fechaRetiro : new Date().toISOString().split("T")[0]
+            }
             className={error ? "errorField" : null}
           />
         </div>

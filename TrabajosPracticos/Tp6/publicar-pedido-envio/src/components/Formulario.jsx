@@ -103,6 +103,7 @@ const Formulario = ({ onSubmit }) => {
             onChange={handleDomicilioChange}
             tipoFormulario="Entrega"
             dataDomicilioForm={domicilioEntregaData}
+            fechaRetiro={domicilioRetiroData.fecha}
           />
         )}
 
