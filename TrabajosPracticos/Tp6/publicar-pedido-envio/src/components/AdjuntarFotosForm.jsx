@@ -6,12 +6,25 @@ const AdjuntarFotosForm = ({ onChange, dataFotos }) => {
 
   const handleChange = (e) => {
     const selectedFiles = Array.from(e.target.files); // Convierte la lista de archivos en un array
-    const updatedFiles = [...files, ...selectedFiles]; // Acumula los archivos seleccionados previamente
+    const validFiles = selectedFiles.filter(file => 
+      file.type === "image/jpeg" || file.type === "image/png"
+    );
 
-    let isError = false;
+    if (validFiles.length !== selectedFiles.length) {
+      setError(true);
+    } else {
+      setError(false);
+    }
+
+    const updatedFiles = [...files, ...validFiles]; // Acumula los archivos seleccionados previamente
     setFiles(updatedFiles);
-    setError(isError);
-    onChange(updatedFiles, isError);
+    onChange(updatedFiles, error);
+  };
+
+  const handleRemove = (index) => {
+    const updatedFiles = files.filter((_, i) => i !== index);
+    setFiles(updatedFiles);
+    onChange(updatedFiles, error);
   };
 
   return (
@@ -21,20 +34,21 @@ const AdjuntarFotosForm = ({ onChange, dataFotos }) => {
         <input
           className="imageInput"
           type="file"
-          multiple={true}
-          name="foto"
-          accept=".jpg, .png"
           onChange={handleChange}
+          multiple
+          accept=".jpg,.jpeg,.png"
         />
-      </div>
-      <div className="fileList">
-        {files.length > 0 && (
-          <ul>
-            {files.map((file, index) => (
-              <li key={index}>{file.name}</li>
-            ))}
-          </ul>
-        )}
+        {error && <p className="error">Solo se permiten archivos .jpg o .png</p>}
+        <div className="fotosList">
+          {files.map((file, index) => (
+            <div key={index} className="fotoItem">
+              <span>{file.name}</span>
+              <button type="button" onClick={() => handleRemove(index)}>
+                Eliminar
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

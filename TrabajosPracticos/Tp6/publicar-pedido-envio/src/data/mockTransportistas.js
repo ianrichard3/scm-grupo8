@@ -20,7 +20,7 @@ const transportistas = [
   {
     id: 4,
     nombre: "Transportista 4",
-    mail: "transportista4@example.com",
+    mail: "nicolasmoroni1d@gmail.com",
     zonaCobertura: ["La Plata", "Mar del Plata", "Chascomús"],
   },
   {
