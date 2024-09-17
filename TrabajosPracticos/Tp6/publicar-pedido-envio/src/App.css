@@ -22,25 +22,11 @@ body {
   cursor: pointer;
   border-radius: 10px;
   transition: background-color 300ms ease;
+  font-weight: bold;
 }
 
 .mainBtn:hover {
   background-color: #00b4d8;
-  /* Color de hover del botón */
-}
-
-
-.submitBtn {
-  background-color: #caf0f8;
-  color: #0077b6;
-  font-weight: bold;
-}
-
-.submitBtn:hover {
-  box-shadow: #03045e;
-  font-weight: 400;
-  background-color: white;
-  color: black;
 }
 
 .subtitle {
@@ -48,7 +34,6 @@ body {
   margin-top: 0px;
   margin-bottom: 30px;
   color: #03045e;
-  /* Color del texto del subtítulo */
 }
 
 .formContentContainer {
@@ -63,7 +48,6 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: #90e0ef;
-  /* Color de fondo de la tarjeta */
   box-sizing: border-box;
 }
 
@@ -87,7 +71,6 @@ body {
   margin-bottom: 10px;
   color: #03045e;
 }
-
 
 .formStepsContainer {
   gap: 30px;
@@ -133,7 +116,6 @@ body {
   transition: border-color 0.3s ease;
 }
 
-
 select {
   background-color: #caf0f8;
   border: 2px solid #00b4d8;
@@ -153,8 +135,6 @@ select {
   margin-bottom: 20px;
 }
 
-
-
 .navButtonsContainer {
   display: flex;
   justify-content: center;
@@ -170,7 +150,6 @@ select {
   align-items: center;
   flex-direction: column;
 }
-
 
 .adjuntarFotosContainer h3 {
   font-size: 20px;
@@ -196,7 +175,6 @@ select {
   border-radius: 5px;
   text-align: center;
   position: relative;
-
 }
 
 .close {
@@ -207,7 +185,6 @@ select {
   cursor: pointer;
   color: black;
 }
-
 
 .imageInput {
   display: flex;
@@ -228,7 +205,7 @@ select {
 
 .imageInput:focus {
   outline: none;
-  border-color: #00b4d8
+  border-color: #00b4d8;
 }
 
 .imageInput::file-selector-button {
@@ -247,13 +224,18 @@ select {
   background-color: white;
 }
 
-
-
 .errorField {
   border: 1px solid red;
 }
 
-
 .disabledBtn {
   background-color: rgb(210, 210, 210);
+  background-color: gray; /* Color gris cuando está deshabilitado */
+  cursor: not-allowed;
+  pointer-events: none;
+  color: white;
+}
+
+.disabledBtn:hover {
+  background-color: gray; /* No cambia de color si está deshabilitado */
 }
