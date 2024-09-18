@@ -1,13 +1,16 @@
 import "./App.css";
 import { useState } from "react";
 import Formulario from "./components/Formulario";
+import NotificationPopup from "./components/NotificationPopup";
 
 function App() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [formData, setFormData] = useState({})
 
   const onSubmit = (formData) => {
     setIsPopupVisible(true);
     console.log(formData);
+    setFormData(formData)
   };
 
   const closePopup = () => {
@@ -19,14 +22,7 @@ function App() {
       <Formulario onSubmit={onSubmit} />
 
       {isPopupVisible && (
-        <div className="popup">
-          <div className="popup-content">
-            <span className="close" onClick={closePopup}>
-              &times;
-            </span>
-            <p>Formulario enviado</p>
-          </div>
-        </div>
+        <NotificationPopup onClose={closePopup} formData={formData} />
       )}
     </>
   );

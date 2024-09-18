@@ -230,12 +230,185 @@ select {
 
 .disabledBtn {
   background-color: rgb(210, 210, 210);
-  background-color: gray; /* Color gris cuando está deshabilitado */
+  background-color: gray;
+  /* Color gris cuando está deshabilitado */
   cursor: not-allowed;
   pointer-events: none;
   color: white;
 }
 
 .disabledBtn:hover {
-  background-color: gray; /* No cambia de color si está deshabilitado */
+  background-color: gray;
+  /* No cambia de color si está deshabilitado */
+}
+
+/* Notificacion PopUp */
+
+.popupBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 0;
+
+}
+
+.notificationPopupContainer {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background-color: #1e1e2f;
+  /* Fondo oscuro moderno */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow: hidden;
+  width: 320px;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideIn 0.3s forwards, fadeOut 0.5s ease 10s forwards;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.notificationPopupContent {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.notificationPopupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notificationPopupTitle {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f7f7ff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.notificationPopupTitle img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+
+}
+
+.notificationPopupTime {
+  font-size: 12px;
+  color: #a0a0b2;
+}
+
+.notificationPopupBody {
+  padding-top: 10px;
+}
+
+.notificationPopupDescription {
+  font-size: 14px;
+  color: #d6d6e2;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.notificationPopupIcon {
+  width: 30px;
+  height: 30px;
+  background-color: #0077b6;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.notificationPopupContainer:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+
+.popupContainer {
+  position: flex;
+  width: 350px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.popupPositionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100vh;
+}
+
+.popupContent {
+  padding: 20px;
+}
+
+.popupBody {
+  font-size: 14px;
+  color: #333;
+}
+
+.popupHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logoEmpresa {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.popupTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.closeButton {
+  margin-top: 10px;
+  background-color: #0077b6;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.closeButton:hover {
+  background-color: #005f8b;
 }
