@@ -1288,7 +1288,7 @@ const transportistas = [
   },
   {
     id: 3,
-    nombre: "Irichbro", // Cuyo
+    nombre: "Fran", // Cuyo
     mail: "egeafran02@gmail.com",
     zonaCobertura: [
       "El Chorrillo",
@@ -2871,8 +2871,8 @@ const transportistas = [
   },
   {
     id: 5,
-    nombre: "Transportista 5", // NOA
-    mail: "transportista5@example.com",
+    nombre: "Ian", // NOA
+    mail: "irichbro@gmail.com",
     zonaCobertura: [
       "San Miguel",
       "Los Sarmientos",
@@ -3703,8 +3703,8 @@ const transportistas = [
   },
   {
     id: 6,
-    nombre: "Transportista 6", // NEA
-    mail: "transportista6@example.com",
+    nombre: "Rami", // NEA
+    mail: "rafranco03@gmail.com",
     zonaCobertura: [
       "Concepción del Bermejo",
       "Los Frentones",
