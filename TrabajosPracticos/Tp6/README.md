@@ -1,5 +1,4 @@
-# Documento de Reglas de Estilo
-Un documento de **buenas prácticas y/o reglas de estilo de código** para JavaScript con React, CSS y HTML, utilizando ESLint, tiene como objetivo mantener la consistencia, claridad y calidad del código. Aquí tienes una estructura sugerida:
+# Documento de Buenas Prácticas y Reglas de Estilo para JavaScript
 
 ## 1. **Configuración de ESLint**
    - Utiliza un archivo de configuración para ESLint (`.eslintrc.json` o `.eslintrc.js`) con las siguientes configuraciones recomendadas:
