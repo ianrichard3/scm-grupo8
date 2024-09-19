@@ -30,10 +30,21 @@ const DomicilioForm = ({
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+  
+    setFormData((prevFormData) => {
 
-    setFormData({
-      ...formData,
-      [name]: value,
+      if (name === "provincia") {
+        return {
+          ...prevFormData,
+          provincia: value,
+          localidad: "",
+        };
+      }
+  
+      return {
+        ...prevFormData,
+        [name]: value,
+      };
     });
   };
 
