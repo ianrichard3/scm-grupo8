@@ -170,12 +170,14 @@ const DomicilioForm = ({
           <input
             type="date"
             name="fecha"
+
             value={formData.fecha}
             onChange={handleChange}
             min={
               fechaRetiro ? fechaRetiro : new Date().toISOString().split("T")[0]
             }
             className={error ? "errorField" : null}
+            onKeyDown={(e) => e.preventDefault()}
           />
         </div>
       </div>

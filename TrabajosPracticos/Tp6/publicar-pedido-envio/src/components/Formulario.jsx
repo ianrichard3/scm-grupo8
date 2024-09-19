@@ -96,10 +96,11 @@ const Formulario = ({ onSubmit }) => {
     onSubmit(returnData);
 
     // send email
+
     await enviarCorreoATransportistas(
       domicilioRetiroData.localidad,
       domicilioEntregaData.localidad,
-      domicilioEntregaData.fecha,
+      domicilioRetiroData.fecha,
       domicilioEntregaData.fecha
     )
 
