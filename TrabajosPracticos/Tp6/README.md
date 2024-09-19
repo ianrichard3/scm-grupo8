@@ -41,20 +41,27 @@
 ## 3. **Estructura de Carpeta**
    Organiza tu proyecto con una estructura clara, como la siguiente:
    ```
-   src/
+   public/
+   ├── logo-tango-envios.jpg
+   ├── notif-sound.mp3
+   ├── vite.svg
+   └── PAN.jpg
+
+    src/
+   ├── assets/
    ├── components/
-   ├── hooks/
-   ├── utils/
+   ├── data/
    ├── styles/
-   └── App.js
+   └── utils/
    ```
-   - `components/`: Contiene todos los componentes reutilizables.
-   - `hooks/`: Contiene hooks personalizados.
-   - `utils/`: Funciones de ayuda o lógica que no están vinculadas a un componente específico.
-   - `styles/`: Archivos CSS o SCSS para estilos globales o por componentes.
+   - `assets/`: Contiene imágenes, fuentes y otros archivos estáticos.
+   - `components/`: Componentes reutilizables de la aplicación.
+   - `data/`: Archivos de datos estáticos, como archivos JSON o configuraciones.
+   - `styles/`: Archivos CSS o SCSS para los estilos globales o específicos de componentes.
+   - `utils/`: Funciones auxiliares y lógica no específica de componentes.
 
 ## 4. **Componentes de React**
-   - Usa **componentes funcionales** en lugar de clases, y preferiblemente con **Hooks**.
+   - Usa **componentes funcionales** en lugar de clases.
    - Cada componente debe tener una **única responsabilidad**. Si un componente se vuelve grande o complejo, divídelo en varios componentes más pequeños.
    - Usa **PropTypes** o **TypeScript** para la validación de propiedades (opcional si trabajas con un equipo que necesita tipado fuerte):
      ```javascript
