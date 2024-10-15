@@ -21,7 +21,7 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 
 | Tipo               | Regla de nombrado | Extensión          | Ubicación                          |
 |--------------------|---------|--------------------|------------------------------------|
-| Bibliografía       | BIBLIO_<'<nombreItem>'>.<"<ext>">  | PDF                | /Bibliografía                      |
+| Bibliografía       | BIBLIO_<\<nombreItem\>>.<"<ext>">  | PDF                | /Bibliografía                      |
 | Presentación       | PRES_<"<nombreItem>">.<<ext>>    | PDF, PPTX          | /MaterialDeClase/UnidadX           |
 | Toma de Notas      | NOTAS_<"<nombreItem>">.<<ext>>   | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
 | Ejercicio práctico | EJER_<"<nombreItem>">.<<ext>>    | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
