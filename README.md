@@ -41,7 +41,7 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 - **Toma de Notas:** El prefijo incluye el autor de la toma de notas.
   - Ejemplo: `NOTAS_Nico_NotasClaseSCM.pdf`
 
-* Los items de tipo imagen pueden estar ubicados en cualquier carpeta
+\* Los items de tipo imagen pueden estar ubicados en cualquier carpeta
 
 
 ## Glosario
