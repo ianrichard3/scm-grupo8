@@ -21,18 +21,17 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 
 | Tipo               | Regla de nombrado | Extensión          | Ubicación                          |
 |--------------------|---------|--------------------|------------------------------------|
-| Bibliografía       | BIBLIO_<<nombreItem>>.<<ext>>  | PDF                | /Bibliografía                      |
-| Presentación       | PRES_<<nombreItem>>.<<ext>>    | PDF, PPTX          | /MaterialDeClase/UnidadX           |
-| Toma de Notas      | NOTAS_<<nombreItem>>.<<ext>>   | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
-| Ejercicio práctico | EJER_<<nombreItem>>.<<ext>>    | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
-| Lineamiento        | LIN_<<nombreItem>>.<<ext>>     | PDF                | /Lineamientos                      |
-| Trabajo Práctico   | TP_<<nombreItem>>.<<ext>>      | DOCX, PDF          | /TrabajosPrácticos/TPX             |
-| Trabajo Conceptual | TC_<<nombreItem>>.<<ext>>      | DOCX, PDF          | /TrabajosConceptuales              |
-| Resumen            | RES_<<nombreItem>>.<<ext>>     | DOCX, PDF          | /Resúmenes/ParcialX                |
-| Guía               | GUIA_<<nombreItem>>.<<ext>>    | PDF                | /TrabajosPrácticos                 |
-| Imagen               | IMG_<<nombreItem>>.<<ext>>    | PNG, JPG                | *                 |
+| Bibliografía       | BIBLIO_<"<nombreItem>">.<"<ext>">  | PDF                | /Bibliografía                      |
+| Presentación       | PRES_<"<nombreItem>">.<<ext>>    | PDF, PPTX          | /MaterialDeClase/UnidadX           |
+| Toma de Notas      | NOTAS_<"<nombreItem>">.<<ext>>   | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
+| Ejercicio práctico | EJER_<"<nombreItem>">.<<ext>>    | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
+| Lineamiento        | LIN_<"<nombreItem>">.<<ext>>     | PDF                | /Lineamientos                      |
+| Trabajo Práctico   | TP_<"<nombreItem>">.<<ext>>      | DOCX, PDF          | /TrabajosPrácticos/TPX             |
+| Trabajo Conceptual | TC_<"<nombreItem>">.<<ext>>      | DOCX, PDF          | /TrabajosConceptuales              |
+| Resumen            | RES_<"<nombreItem>">.<<ext>>     | DOCX, PDF          | /Resúmenes/ParcialX                |
+| Guía               | GUIA_<"<nombreItem>">.<<ext>>    | PDF                | /TrabajosPrácticos                 |
+| Imagen               | IMG_<"<nombreItem>">.<<ext>>    | PNG, JPG                | *                 |
 
-* Puede estar ubicado en cualquier carpeta
 
 ### Regla de nombrado
 
