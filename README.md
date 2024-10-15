@@ -19,24 +19,22 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 
 ## Listado de ítems de configuración
 
-| Tipo               | Prefijo | Extensión          | Ubicación                          |
+| Tipo               | Regla de nombrado | Extensión          | Ubicación                          |
 |--------------------|---------|--------------------|------------------------------------|
-| Bibliografía       | BIBLIO  | PDF                | /Bibliografía                      |
-| Presentación       | PRES    | PDF, PPTX          | /MaterialDeClase/UnidadX           |
-| Toma de Notas      | NOTAS   | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
-| Ejercicio práctico | EJER    | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
-| Lineamiento        | LIN     | PDF                | /Lineamientos                      |
-| Trabajo Práctico   | TP      | DOCX, PDF          | /TrabajosPrácticos/TPX             |
-| Trabajo Conceptual | TC      | DOCX, PDF          | /TrabajosConceptuales              |
-| Resumen            | RES     | DOCX, PDF          | /Resúmenes/ParcialX                |
-| Guía               | GUIA    | PDF                | /TrabajosPrácticos                 |
+| Bibliografía       | BIBLIO_<<nombreItem>>.<<ext>>  | PDF                | /Bibliografía                      |
+| Presentación       | PRES_<<nombreItem>>.<<ext>>    | PDF, PPTX          | /MaterialDeClase/UnidadX           |
+| Toma de Notas      | NOTAS_<<nombreItem>>.<<ext>>   | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
+| Ejercicio práctico | EJER_<<nombreItem>>.<<ext>>    | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
+| Lineamiento        | LIN_<<nombreItem>>.<<ext>>     | PDF                | /Lineamientos                      |
+| Trabajo Práctico   | TP_<<nombreItem>>.<<ext>>      | DOCX, PDF          | /TrabajosPrácticos/TPX             |
+| Trabajo Conceptual | TC_<<nombreItem>>.<<ext>>      | DOCX, PDF          | /TrabajosConceptuales              |
+| Resumen            | RES_<<nombreItem>>.<<ext>>     | DOCX, PDF          | /Resúmenes/ParcialX                |
+| Guía               | GUIA_<<nombreItem>>.<<ext>>    | PDF                | /TrabajosPrácticos                 |
+| Imagen               | IMG_<<nombreItem>>.<<ext>>    | PNG, JPG                | *                 |
 
-
+* Puede estar ubicado en cualquier carpeta
 
 ### Regla de nombrado
-
-**Regla Genérica:**
-`<<prefijoItem>>_<<nombreItem>>.<<ext>>`
 
 **Reglas Específicas**
 - **Resumen:** El prefijo incluye el autor del resumen.
@@ -44,9 +42,7 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 - **Toma de Notas:** El prefijo incluye el autor de la toma de notas.
   - Ejemplo: `NOTAS_Nico_NotasClaseSCM.pdf`
 
-
-
-
+* Los items de tipo imagen pueden estar ubicados en cualquier carpeta
 
 
 ## Glosario
