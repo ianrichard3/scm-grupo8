@@ -56,7 +56,7 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 |US| User Stories|
 
 ## Criterio de Línea Base
-Se establecerá una línea base luego de la entrega presencial de cada parcial, la cual se encontrará en la rama “main” del repositorio. 
+Se establecerá una línea base luego de la entrega presencial de cada parcial, la cual se realizará sobre la rama “main” del repositorio. 
 Decidimos utilizar este criterio ya que consideramos un punto de validación de que hemos adquirido correctamente el conocimiento en la materia.
 
 ## Enlace al repositorio
