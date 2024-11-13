@@ -26,7 +26,7 @@ Hemos propuesto la siguiente distribución de directorios pensando en el desarro
 | Toma de Notas      | NOTAS_<\<nombreItem\>>.<\<ext\>>   | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
 | Ejercicio práctico | EJER_<\<nombreItem\>>.<\<ext\>>    | DOCX, PDF, PNG     | /MaterialDeClase/UnidadX           |
 | Lineamiento        | LIN_<\<nombreItem\>>.<\<ext\>>     | PDF                | /Lineamientos                      |
-| Trabajo Práctico   | TP_<\<nombreItem\>>.<\<ext\>>      | DOCX, PDF          | /TrabajosPrácticos/TPX             |
+| Trabajo Práctico   | TP_<\<nombreItem\>>.<\<ext\>>      | DOCX, PDF, XLSX    | /TrabajosPrácticos/TPX             |
 | Trabajo Conceptual | TC_<\<nombreItem\>>.<\<ext\>>      | DOCX, PDF          | /TrabajosConceptuales              |
 | Resumen            | RES_<\<nombreItem\>>.<\<ext\>>     | DOCX, PDF          | /Resúmenes/ParcialX                |
 | Guía               | GUIA_<\<nombreItem\>>.<\<ext\>>    | PDF                | /TrabajosPrácticos                 |
